@@ -36,7 +36,8 @@ function TodoList() {
   // }, [])
 
   useEffect(() => {
-    const todos = JSON.parse(localStorage.getItem('todos')) ?? [];
+    const todos = JSON.parse(localStorage.getItem('todos'));
+    if(!todos) return;
     setTodos(todos);
   }, [])
 
